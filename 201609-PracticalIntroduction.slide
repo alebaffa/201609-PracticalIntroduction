@@ -1,0 +1,222 @@
+Practical Introduction to the Go programming language
+Riviera Golang meetup
+13 Sep 2016
+
+Simon HEGE
+@simonhege
+
+Alessandro BAFFA
+@alebaffa
+
+
+* Outline
+
+1. What is Go?
+2. Less is exponentially more
+3. Hands on
+4. Go community
+
+.image images/riviera-golang.png
+
+: Thanks for attending. Feel free to ask questions
+: Who as already written a line of code in go?
+: Alessandro for the last topic
+
+
+* What is Go?
+
+"Go is an open source programming language that makes it easy to build simple, reliable, and efficient software."
+
+.link http://golang.org
+
+: As stated by the Go team on the official website
+: - programming language
+: - open-source
+: - easy to build
+: - simple
+: - reliable
+: - efficient
+
+
+* History
+- 2007: design began internally at Google (Robert Griesemer, Rob Pike, and Ken Thompson)
+- 2009: open sourced
+- 2012: Go 1, language is stable
+- 2016: Go 1.7 released in August
+
+.image https://golang.org/doc/gopher/bumper320x180.png
+
+: Pike is the co-inventor of UTF8
+: Thompson is with Denis Richie the principal creator of UNIX
+: 6 months release cycle
+: Go 1 compatibility statement
+: no 2.0 after 1.9
+
+* Why Go?
+
+Go is a language that scales:
+- great support for concurrency
+- designed and tooled for large code bases
+
+.image https://www.google.com/about/datacenters/gallery/images/_3000/CBF_009.jpg _ 400
+
+* Who uses Go?
+
+Amadeus, BBC Worldwide, Bitbucket, Booking.com, Core OS, Datadog, Digital Ocean, Docker, Dropbox, Facebook, Getty Images, GitHub, Google, GOV.UK, Heroku, IBM, Intel, InfluxDB, Iron.io, Kubernetes, Medium, MongoDB, Mozilla services, Netflix, New York Times, pool.ntp.org, Rackspace, Shutterfly, SmugMug, SoundCloud, SpaceX, Square, Stack Exchange, Thomson Reuters Eikon, Tumblr, Twitch, Twitter, Uber, VMWare ...
+
+.link http://golang.org/wiki/GoUsers
+
+: Google, Github, Booking.com, SpaceX
+: Amadeus
+: Core OS, Docker
+
+* What is made by gophers?
+
+- The Go compiler
+- Docker, Kubernetes
+- dl.google.com
+- Caddy web server
+- ...
+
+.image https://golang.org/doc/gopher/biplane.jpg _ 300
+
+: Mainly server related stuff or command line tools
+: No official UI
+: But android/ios development possible
+: Not in a plane, but ...
+
+
+* Go philosophy
+
+Fast, efficient for computers:
+
+- Programs compile to machine code.  There's no VM.
+- Control over memory layout, fewer indirections
+
+Fun and fast for humans:
+
+- C family (code looks familiar)
+- Statically linked binaries
+- Cross platform
+- Built-in concurrency
+- Garbage collected
+- Rich tooling
+
+: Simplicity at the cost of liberty (ex: standard formatting)
+
+
+* Features intentionally left out
+
+- No classes or inheritance
+- No exceptions
+- No annotations
+- No generics/template/...
+
+Clarity is critical (when reading and writing code)
+
+See [[http://commandcenter.blogspot.com/2012/06/less-is-exponentially-more.html][Less is exponentially more (Pike, 2012)]]
+
+Full spec available at: 
+.link https://golang.org/ref/spec
+
+* Hands on
+Installation instructions available at [[https://golang.org/dl]]
+
+Set the GOPATH environment variable (ex: /home/user/gocode):
+- where to look for go code: GOPATH/src
+- compiled packages will go in GOPATH/pkg/GOOS_GOARCH
+- compiled commands will go in GOPATH/bin
+
+.image https://golang.org/doc/gopher/pencil/gopherswrench.jpg _ 400
+
+* Hello world
+
+*Instructions:* 
+You already know them!
+
+*Tips*and*tricks:*
+
+- Write your code in GOPATH/src/hello/hello.go
+- Use the fmt package (help available at [[godoc.org]])
+- Compile with `go install hello`
+- Execute GOPATH/bin/hello
+
+* Hello world
+.play hello/hello-cli.go
+
+: create a local variable message := "Hello World"
+
+* Hello world takeaways
+
+- .go file extension
+- program is made of packages
+- Compile:
+  go build your/package
+- Compile and install in GOPATH
+  go install your/package
+- Compile and run
+  go run your/package
+- Format your code
+  go fmt your/package
+
+  
+* Hello HTTP server
+
+*Instructions:* 
+Write a program that serve a Hello World page at [[http://localhost:12345]]
+
+*Tips*and*tricks:*
+
+- Useful standard packages: net/http, io, fmt, log
+- [[godoc.org]]
+
+
+* Hello HTTP server
+.play hello/hello-server.go
+
+.link http://localhost:12345/hello
+
+
+* Hello world server takeaways
+- rich standard library
+- interfaces
+
+
+* A more complex program: web crawler
+*Instructions:* 
+Write a program that crawl the (entire) web in parallel without fetching the same URL twice
+
+*Tips*and*tricks:*
+- Use `go`get` to install an external package
+- [[github.com/PuerkitoBio/goquery]] to extract URLs from HTML
+- Useful standard packages: sync
+
+
+* Web crawler: fetching the web
+
+.link github.com/riviera-golang/201609-PracticalIntroduction/fetch
+.link github.com/riviera-golang/201609-PracticalIntroduction/crawler
+.link github.com/riviera-golang/201609-PracticalIntroduction/crawlerchannel
+
+: if without parenthesis
+: only one for (no while, do, ...)
+: defer
+: interface URLCollection could have been defined in an other package (any type that have the required methods implements the interface)
+
+
+* Web crawler takeaways
+- builtin support for concurrency
+- channels and select allows to think in an unusual way
+
+
+* A lot more to talk about
+- testing via `go test`
+- type system
+
+
+* Go community
+.image https://golang.org/doc/gopher/talks.png
+
+
+* Credits
+The Go gopher was designed by Renee French. (http://reneefrench.blogspot.com/)
