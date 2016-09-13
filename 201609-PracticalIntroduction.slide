@@ -217,6 +217,36 @@ Write a program that crawl the (entire) web in parallel without fetching the sam
 * Go community
 .image https://golang.org/doc/gopher/talks.png
 
+- 230 meetups around the world
+.image images/meetups.png
+
+
+* Go community
+*Lots*of*conferences*
+
+One in particular: [[http://www.dotgo.eu/][DotGo]] in Paris
+.image images/dotgo.png
+
+
+* Go community
+*Follow*
+
+- [[https://forum.golangbridge.org/][Go Forum]] : all-purpose discussions about Go
+- [[http://gophers.slack.com/][Gophers Slack Channel]] : real-time chat (really active)
+- [[http://golangnews.com/][Golang News]] : awesome curated newsletter
+- [[https://twitter.com/search?q=%23golang&src=typd][#golang]] : on Twitter
+- [[https://groups.google.com/forum/#!forum/golang-nuts][golang-nuts]] : Google groups mailing list (_suggestion_ : _weekly_ _digest_) 
+- [[http://reddit.com/r/golang][/r/golang]] : sub-reddit
+- [[http://stackoverflow.com/tags/go][Stack Overflow Q&A]]
+
+
+* Go community
+
+*Contribute*
+- [[https://groups.google.com/forum/#!forum/golang-dev][golang-dev]] : contribute to the core development
+- [[https://groups.google.com/forum/#!forum/golang-codereviews][golang-codereviews]] : code reviews from Gerrit
+- [[https://groups.google.com/forum/#!forum/golang-announce][golang-announce]] : release announcements
+
 
 * Credits
-The Go gopher was designed by Renee French. (http://reneefrench.blogspot.com/)
+The Go gopher was designed by Renee French. [[http://reneefrench.blogspot.com/][(http://reneefrench.blogspot.com/)]]
